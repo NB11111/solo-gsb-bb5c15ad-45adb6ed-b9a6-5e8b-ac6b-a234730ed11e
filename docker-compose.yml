@@ -1,0 +1,13 @@
+services:
+  ocr-layout:
+    build: .
+    image: ocr-layout-service:latest
+    container_name: ocr-layout-service
+    ports:
+      - "8000:8000"
+    volumes:
+      - ocr-data:/data
+    restart: unless-stopped
+
+volumes:
+  ocr-data:
